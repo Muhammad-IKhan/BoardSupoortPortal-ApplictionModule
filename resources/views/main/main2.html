@@ -1,0 +1,97 @@
+<main class="container mx-auto px-4 py-6">
+    <div x-data="{ activeTab: 'news' }" class="bg-white shadow-md rounded-lg">
+        <!-- Navigation Tabs -->
+        <nav class="border-b">
+            <ul class="flex space-x-4 p-4">
+                <li>
+                    <button 
+                        @click="activeTab = 'news'" 
+                        :class="{'text-blue-600 border-blue-600': activeTab === 'news'}"
+                        class="text-gray-600 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 pb-2"
+                    >
+                        News
+                    </button>
+                </li>
+                <li>
+                    <button 
+                        @click="activeTab = 'videos'" 
+                        :class="{'text-blue-600 border-blue-600': activeTab === 'videos'}"
+                        class="text-gray-600 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 pb-2"
+                    >
+                        Videos
+                    </button>
+                </li>
+                <li>
+                    <button 
+                        @click="activeTab = 'services'" 
+                        :class="{'text-blue-600 border-blue-600': activeTab === 'services'}"
+                        class="text-gray-600 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 pb-2"
+                    >
+                        Services
+                    </button>
+                </li>
+                <li>
+                    <button 
+                        @click="activeTab = 'contact'" 
+                        :class="{'text-blue-600 border-blue-600': activeTab === 'contact'}"
+                        class="text-gray-600 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 pb-2"
+                    >
+                        Contact
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Content Sections -->
+        <div class="p-4">
+            <!-- News Section -->
+            <div x-show="activeTab === 'news'" class="space-y-4">
+                <div class="flex items-center bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://picsum.photos/200/100" alt="News Thumbnail" class="w-24 h-16 object-cover mr-4 rounded">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Latest News Update</h3>
+                        <p class="text-gray-600 text-sm">Breaking developments and current events</p>
+                        <span class="text-xs text-gray-500">Updated: December 1, 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div x-show="activeTab === 'videos'" class="space-y-4">
+                <div class="flex items-center bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://picsum.photos/200/100" alt="Video Thumbnail" class="w-24 h-16 object-cover mr-4 rounded">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Latest Video Release</h3>
+                        <p class="text-gray-600 text-sm">Engaging visual content</p>
+                        <span class="text-xs text-gray-500">Published: December 1, 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div x-show="activeTab === 'services'" class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Our Services</h3>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Consulting</li>
+                        <li>Training</li>
+                        <li>Support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div x-show="activeTab === 'contact'" class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Contact Information</h3>
+                    <div class="space-y-2">
+                        <p><strong>Chairman:</strong> Prof. Nasrullah Khan Yousafzai</p>
+                        <p><strong>Secretary:</strong> Mehdi Jan</p>
+                        <p><strong>Email:</strong> contact@example.com</p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
